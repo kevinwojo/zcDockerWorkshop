@@ -2,6 +2,9 @@ FROM alpine
 
 RUN apk update
 RUN apk add bash
+RUN apk add php
 
-CMD ["/bin/echo", "hello world"]
+ADD hello.php /www/hello.php
+
+CMD ["/usr/bin/php", "/www/hello.php"]
 
